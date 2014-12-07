@@ -28,7 +28,7 @@ def list_paths():
     """Returns a list of available paths"""
     bottle.response.content_type = 'text/plain'
     for path in QueryRegister().get_paths():
-        yield "https://ftp-master.debian.org/epydoc/%s-module.html#%s" % (QueryRegister().get_path_help(path), path))
+        yield "https://ftp-master.debian.org/epydoc/%s-module.html#%s" % (QueryRegister().get_path_help(path), path)
         yield "\n"
 #    return json.dumps(QueryRegister().get_paths())
 QueryRegister().register_path('/list_paths', list_paths)
